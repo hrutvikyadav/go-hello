@@ -6,17 +6,21 @@ import (
     "log"
 )
 
-import "rsc.io/quote/v4"
+//import "rsc.io/quote/v4"
 
 
 func main() {
     log.SetPrefix("[6GREETER9]: ")
     log.SetFlags(0)
 
-    msg, err := go_greet.Greet("")
+    // A slice of names.
+    names := []string{"Gladys", "Samantha", "Darrin"}
+
+    // Request greeting messages for the names.
+    messages, err := go_greet.Greets(names)
     if err != nil {
         log.Fatal(err)
     }
 
-    fmt.Println(msg, "\n", quote.Go())
+    fmt.Println(messages)
 }
